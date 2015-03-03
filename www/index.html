@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>AgriTrader</title>
+    <link rel="stylesheet" href="./winjs/css/ui-dark.css" />
+
+    <!-- Debugger
+    <script src="debuggap.js" type="text/javascript"></script>
+    -->
+
+    <script src="./winjs/js/base.js"></script>
+    <script src="./winjs/js/ui.js"></script>
+
+    <!-- Cordova reference (must be added AFTER base.js reference) -->
+    <script src="./js/navigator.js"></script>
+    <script src="./js/jquery-2.1.1.js"></script>
+    <script src="./js/q.js"></script>
+</head>
+<body>
+    <div id="confirmBox"></div>
+
+    <div id="contenthost"
+         data-win-control="Application.PageControlNavigator"
+         data-win-options="{home: './views/listings/listings.html'}"></div>
+
+    <div id="appBarContainer">
+        <!-- Create AppBar -->
+        <!-- BEGINTEMPLATE: Template code for an AppBar -->
+
+        <div id="appBar" data-win-control="WinJS.UI.AppBar"
+             data-win-options="{sticky: false, closedDisplayMode:'minimal'}">
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmd1',label:'CMD1',icon:'settings'}"></button>
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmd2',label:'CMD2',icon:'settings'}"></button>
+
+        </div>
+        <!-- ENDTEMPLATE -->
+    </div>
+
+    <div style="display:none" id="listItemFlyout" data-win-control="WinJS.UI.Flyout">
+        <div class="flyout-content">
+            <h3 class="dialog-title">Invalid Data Notification</h3>
+            <ul id="validationErrors">
+                <li>--</li>
+            </ul>
+        </div>
+        <button id="flyOutDismiss">Dismiss</button>
+    </div>
+
+
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+</body>
+</html>
